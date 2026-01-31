@@ -70,11 +70,14 @@ public class PlayerMovement : MonoBehaviour
         Vector3 velocity = rb.linearVelocity;
         Vector3 targetVelocity = moveDir * moveSpeed;
 
-        rb.linearVelocity = new Vector3(
-            targetVelocity.x,
-            velocity.y,
-            targetVelocity.z
-        );
+        rb.linearVelocity += targetVelocity;
+        //rb.linearVelocity = new Vector3(
+        //    targetVelocity.x,
+        //    velocity.y,
+        //    targetVelocity.z
+        //);
+        
+        rb.linearVelocity -= new Vector3(rb.linearVelocity.x * .2f, 0, rb.linearVelocity.z * .2f);
     }
 
     void Jump()

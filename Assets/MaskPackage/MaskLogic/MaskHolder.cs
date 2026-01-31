@@ -11,7 +11,8 @@ public class MaskHolder : MonoBehaviour
     public LayerMask castLayerMask;
     public Mask heldMask = null;
     public GameObject heldMaskObj = null;
-    public Rigidbody rb;
+    public Transform maskHolderSpot;
+    
     
     [HideInInspector]
     public bool transferring = false;
@@ -25,7 +26,8 @@ public class MaskHolder : MonoBehaviour
     [HideInInspector]
     public Transform cam;
     [HideInInspector]
-    public Transform maskHolderSpot;
+    public Rigidbody rb;
+    
     
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -66,6 +68,7 @@ public class MaskHolder : MonoBehaviour
             return;
         cooldownReady = false;
 
+        print("enmter steal");
         
         
         Ray ray = new Ray();
@@ -74,7 +77,6 @@ public class MaskHolder : MonoBehaviour
         //Cast to find stealable mask
         if (Physics.SphereCast(ray, castRadius, out RaycastHit hit, castDistance, castLayerMask))
         {
-            print("successful hit");
             heldMask = hit.transform.GetComponent<Mask>();
             heldMaskObj = heldMask.gameObject;
             heldMask.FlyTo(this);

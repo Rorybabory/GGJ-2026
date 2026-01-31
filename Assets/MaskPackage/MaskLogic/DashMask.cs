@@ -21,11 +21,6 @@ public class DashMask : Mask
         }
     }
 
-    private void OnCollisionStay(Collision other)
-    {
-        print("WOAAAH");
-    }
-
     private IEnumerator cooldownRoutine()
     {
         cooldownActive = true;

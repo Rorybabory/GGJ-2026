@@ -6,7 +6,7 @@ public class Mask : MonoBehaviour
 {
     public MaskHolder currentOwner;
 
-    private float flightRate = 1;
+    private float flightRate = 10f;
     [HideInInspector]
     public bool midTrade = false;
 
@@ -49,7 +49,7 @@ public class Mask : MonoBehaviour
         
         //float timer = 0;
         //while (timer < 1)
-        while (Vector3.Distance(transform.position, newOwner.transform.position) > 0.1f)
+        while (Vector3.Distance(transform.position, newOwner.maskHolderSpot.position) > 1)
         {
             transform.position = Vector3.Lerp(transform.position, newOwner.maskHolderSpot.position, Time.deltaTime * flightRate);
             //transform.position = Vector3.Lerp(prevOwnPos, newOwner.maskHolderSpot.position, timer / 1);
@@ -62,6 +62,8 @@ public class Mask : MonoBehaviour
         transform.localPosition = Vector3.zero;
         transform.localRotation = Quaternion.identity;
         midTrade = false;
+        
+        print("exit transfer");
         yield return null;
     }
     
