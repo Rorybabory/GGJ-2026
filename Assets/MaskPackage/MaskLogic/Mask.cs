@@ -7,6 +7,9 @@ public class Mask : MonoBehaviour
     public MaskHolder currentOwner;
 
     private float flightRate = 10f;
+    private float duration = 0.5f;
+    private float timer = 0.0f;
+    
     [HideInInspector]
     public bool midTrade = false;
 
@@ -46,26 +49,54 @@ public class Mask : MonoBehaviour
         transform.parent = null;
 
         Vector3 prevOwnPos = transform.position;
+        Vector3 startPos = transform.position;
         
-        //float timer = 0;
-        //while (timer < 1)
-        while (Vector3.Distance(transform.position, newOwner.maskHolderSpot.position) > 1)
+        timer = 0;
+        while (timer < duration)
+        //while (Vector3.Distance(transform.position, newOwner.maskHolderSpot.position) > 1)
         {
-            transform.position = Vector3.Lerp(transform.position, newOwner.maskHolderSpot.position, Time.deltaTime * flightRate);
+            timer += Time.deltaTime;
+            transform.position = Vector3.Lerp(startPos, newOwner.maskHolderSpot.position, EaseInCirc(timer / duration));
+            //transform.position = Vector3.Lerp(transform.position, newOwner.maskHolderSpot.position, Time.deltaTime * flightRate);
+            
             //transform.position = Vector3.Lerp(prevOwnPos, newOwner.maskHolderSpot.position, timer / 1);
             //timer += Time.deltaTime;
+            Debug.Log(timer/duration);
             yield return null;
         }
+        transform.position = newOwner.maskHolderSpot.position;
         
         currentOwner = newOwner;
         transform.parent = newOwner.maskHolderSpot;
         transform.localPosition = Vector3.zero;
         transform.localRotation = Quaternion.identity;
+        timer = 0.0f;
         midTrade = false;
         
         print("exit transfer");
         yield return null;
     }
+
+    private float EaseInOutQuart(float t)
+    {
+        return t < 0.5 ? 8 * t * t * t * t : 1.0f - Mathf.Pow(-2f * t + 2f, 4f)/2f;
+        //return x < 0.5 ? 8 * x * x * x * x : 1 - Math.pow(-2 * x + 2, 4) / 2;
+    }
     
-    
+    private float EaseInOutQuad(float t)
+    {
+        return t < 0.5 ? 2 * t * t : 1.0f - Mathf.Pow(-2f * t + 2f, 2f)/2f;
+        //return x < 0.5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2;
+    }
+
+    private float EaseOutExpo(float t)
+    {
+        return t >= 0.99f ? 1f : 1f - Mathf.Pow(2f, -10f * t);
+    }
+
+    private float EaseInCirc(float t)
+    {
+        return 1 - Mathf.Sqrt(1f - Mathf.Pow(t, 2));
+        //return 1 - Math.sqrt(1 - Math.pow(x, 2));
+    }
 }
