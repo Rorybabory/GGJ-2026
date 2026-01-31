@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.LowLevelPhysics;
@@ -27,8 +28,10 @@ public class MaskHolder : MonoBehaviour
     public Transform cam;
     [HideInInspector]
     public Rigidbody rb;
-    
-    
+
+    [HideInInspector]
+    public Vector3 velocity;
+    private Vector3 previousPos;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -46,6 +49,12 @@ public class MaskHolder : MonoBehaviour
         transform.position = maskHolderSpot.position;
         rb = GetComponent<Rigidbody>();
         cooldownReady = true;
+    }
+
+    private void Update()
+    {
+        velocity = (transform.position - previousPos) / Time.deltaTime;
+        previousPos = transform.position;
     }
 
     private void OnAbility(InputValue value)

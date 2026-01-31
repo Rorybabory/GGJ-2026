@@ -21,6 +21,27 @@ public class DashMask : Mask
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        print("velocity " + currentOwner.velocity);
+        if (currentOwner.velocity.magnitude < 10)
+        {
+            return;
+        }
+        
+        Health h = other.gameObject.GetComponent<Health>();
+        if (h && !currentOwner.isPlayer && h.isPlayer)
+        {
+            h.TakeDamage(1);
+            return;
+        }
+        if (h && !h.isPlayer)
+        {
+            h.TakeDamage(1);
+        }
+        print("enter trigger");
+    }
+
     private IEnumerator cooldownRoutine()
     {
         cooldownActive = true;

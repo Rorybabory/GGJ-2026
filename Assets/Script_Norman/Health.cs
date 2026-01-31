@@ -7,6 +7,8 @@ public class Health : MonoBehaviour
 {
     [field: SerializeField] 
     public float currHealth { get; private set; }
+
+    public bool isPlayer = false;
     
     [SerializeField] private float maxHealth;
     public float GetMaxHealth(){ return maxHealth; }
