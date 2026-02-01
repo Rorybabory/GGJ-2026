@@ -33,17 +33,17 @@ public class PlayerCamera : MonoBehaviour
     {
         Vector2 look = lookInput.action.ReadValue<Vector2>();
 
-        float mouseX = look.x * mouseSensitivity * Time.deltaTime;
-        float mouseY = look.y * mouseSensitivity * Time.deltaTime;
+        float mouseX = look.x * mouseSensitivity;
+        float mouseY = look.y * mouseSensitivity;
         
         yRotation += mouseX;
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
-        
+        cameraPivotTransform.localRotation = Quaternion.Euler(xRotation, yRotation, 0f);
+
         /*currentX = Mathf.Lerp(currentX, xRotation, Time.deltaTime);
         currentY = Mathf.Lerp(currentY, yRotation, Time.deltaTime);*/
-        
-        cameraPivotTransform.localRotation = Quaternion.Euler(xRotation, yRotation, 0f);
+
 
         // Yaw
         //transform.Rotate(Vector3.up * mouseX);
