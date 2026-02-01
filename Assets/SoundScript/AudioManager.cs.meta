@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 76fa858642dcfa242afedb0cc699e9d6
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - BGMHolder: {instanceID: 0}
+  - SFXHolder: {instanceID: 0}
+  - audioMixer: {fileID: 24100000, guid: 1c6bbf155c6355a4ab2deebdc6361452, type: 2}
+  - BGMAudioMixer: {fileID: 8359579592513759520, guid: 1c6bbf155c6355a4ab2deebdc6361452,
+      type: 2}
+  - SFXAudioMixer: {fileID: 5804835400329339284, guid: 1c6bbf155c6355a4ab2deebdc6361452,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

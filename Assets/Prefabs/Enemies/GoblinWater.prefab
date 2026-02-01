@@ -6348,6 +6348,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1178116123503224930}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: rig|Dazed
+          m_BoolArgument: 1
+        m_CallState: 2
   OnDead:
     m_PersistentCalls:
       m_Calls:
@@ -6361,6 +6373,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 1
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1178116123503224930}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: rig|Death
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2240834601883056418
@@ -7045,15 +7069,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentOwner: {fileID: 2240834601883056418}
   midTrade: 0
-  range: 4
+  range: 5
   ObtainWeapon:
     m_PersistentCalls:
       m_Calls: []
   shield: {fileID: 3946142079527042997}
   shieldSpeed: 1000
   bounce: 10
-  force: 50
-  cooldown: 1
+  force: 100
+  cooldown: 2
   shieldBashHitbox: {fileID: 7226001401303864872}
   playerTransform: {fileID: 0}
 --- !u!135 &3507523514486904384
@@ -11295,7 +11319,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1062031580865507951}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 384c35ddb8fcd8b49b656fe8716e13a4, type: 3}
   m_Name: 

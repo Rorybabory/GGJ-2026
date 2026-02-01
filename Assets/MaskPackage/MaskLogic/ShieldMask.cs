@@ -31,9 +31,9 @@ public class ShieldMask : Mask
         }
         else
         {
-            Vector3 finalforce = (playerTransform.position - currentOwner.transform.position) * force;
+            /*Vector3 finalforce = (playerTransform.position - currentOwner.transform.position) * force;
             finalforce = new  Vector3(finalforce.x, 0f, finalforce.z);
-            currentOwner.rb.AddForce(finalforce, ForceMode.Impulse);
+            currentOwner.rb.AddForce(finalforce, ForceMode.Impulse);*/
         }
 
         StartCoroutine(cooldownRoutine());

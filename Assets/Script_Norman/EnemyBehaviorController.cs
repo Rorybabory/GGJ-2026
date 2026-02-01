@@ -87,6 +87,8 @@ public class EnemyBehaviorController : MonoBehaviour
         staggerTimer += Time.deltaTime;
         if (staggerDuration <= staggerTimer)
         {
+            IsRunning = true;
+            IsAttacking = false;
             IsStaggered = false;
         }
     }
