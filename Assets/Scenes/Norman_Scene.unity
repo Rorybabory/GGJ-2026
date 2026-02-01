@@ -3161,6 +3161,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyAUGHH
       objectReference: {fileID: 0}
+    - target: {fileID: 8064249056688876204, guid: e3f3b1b5396f1d348abeedf27e8cd7a4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

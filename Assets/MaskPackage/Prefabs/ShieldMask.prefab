@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 7044794909336472727}
   - component: {fileID: 6524426190463073606}
   - component: {fileID: 2690798874350980312}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: ShieldMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
