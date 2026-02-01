@@ -39,6 +39,8 @@ public class MaskHolder : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        //castLayerMask = LayerMask.NameToLayer("Mask");
+        Debug.Log(castLayerMask);
         if (transform.gameObject.CompareTag("Player"))
         {
             isPlayer = true;
@@ -94,7 +96,14 @@ public class MaskHolder : MonoBehaviour
         ray.direction = cam.forward;
         //Cast to find stealable mask
         if (Physics.SphereCast(ray, castRadius, out RaycastHit hit, castDistance, castLayerMask))
+        //if (Physics.Raycast(ray, out RaycastHit hit, castDistance, castLayerMask))
         {
+            if (hit.collider.gameObject.layer != LayerMask.NameToLayer("Mask"))
+            {
+                cooldownReady = true;
+                return;
+            }
+            
             MaskHolder mhd = hit.collider.gameObject.GetComponentInParent<MaskHolder>();
             if (mhd != null)
             {
@@ -105,14 +114,14 @@ public class MaskHolder : MonoBehaviour
                 }
             }
             //Debug.Log(hit.collider.gameObject.name);
-            if (hit.transform.GetComponent<Mask>().currentOwner == null)
+            if (hit.collider.gameObject.GetComponent<Mask>().currentOwner == null)
             {
                 return;
-            }else if (hit.transform.GetComponent<Mask>().currentOwner.GetComponent<MaskHolder>() == null)
+            }else if (hit.collider.gameObject.GetComponent<Mask>().currentOwner.GetComponent<MaskHolder>() == null)
             {
                 return;
             }
-            heldMask = hit.transform.GetComponent<Mask>();
+            heldMask = hit.collider.GetComponent<Mask>();
             heldMask.currentOwner.GetComponent<MaskHolder>().heldMask = heldMask;
             heldMask.currentOwner.heldMask = null;
             heldMaskObj = heldMask.gameObject;

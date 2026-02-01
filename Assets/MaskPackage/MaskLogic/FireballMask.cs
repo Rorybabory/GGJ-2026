@@ -7,5 +7,6 @@ public class FireballMask : Mask
     public override void Ability(float input)
     {
         GameObject obj = GameObject.Instantiate(fireballPrefab, firePoint.position, firePoint.rotation);
+        Debug.Log(obj.name);
     }
 }
