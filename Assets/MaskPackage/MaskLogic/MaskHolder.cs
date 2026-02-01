@@ -32,6 +32,7 @@ public class MaskHolder : MonoBehaviour
     [HideInInspector]
     public Vector3 velocity;
     private Vector3 previousPos;
+    public bool isStaggered = false;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -55,6 +56,11 @@ public class MaskHolder : MonoBehaviour
     {
         velocity = (transform.position - previousPos) / Time.deltaTime;
         previousPos = transform.position;
+
+        if (isStaggered)
+        {
+            IfStaggeredAndStealMask();
+        }
     }
 
     private void OnAbility(InputValue value)
@@ -86,7 +92,19 @@ public class MaskHolder : MonoBehaviour
         //Cast to find stealable mask
         if (Physics.SphereCast(ray, castRadius, out RaycastHit hit, castDistance, castLayerMask))
         {
+            MaskHolder mhd = hit.collider.gameObject.GetComponentInParent<MaskHolder>();
+            if (mhd != null)
+            {
+                if (!mhd.isStaggered)
+                {
+                    Debug.Log(hit.collider.gameObject.name);
+                    return;
+                }
+            }
+
             heldMask = hit.transform.GetComponent<Mask>();
+            heldMask.currentOwner.GetComponent<MaskHolder>().heldMask = heldMask;
+            heldMask.currentOwner.heldMask = null;
             heldMaskObj = heldMask.gameObject;
             heldMask.FlyTo(this);
             StartCoroutine(CooldownFunction());
@@ -120,5 +138,21 @@ public class MaskHolder : MonoBehaviour
         print("cooldown function");
         yield return new WaitForSeconds(cooldownTime);
         cooldownReady = true;
+    }
+
+    public void SetIsStaggered(bool isStaggered)
+    {
+        this.isStaggered = isStaggered;
+    }
+    
+    private void IfStaggeredAndStealMask()
+    {
+        if (heldMask != null || isPlayer)
+        {
+            return;
+        }
+
+        Health h = GetComponent<Health>();
+        h.Kill();
     }
 }
