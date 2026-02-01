@@ -37,14 +37,14 @@ public class ShieldMask : Mask
     
     private IEnumerator cooldownRoutine()
     {
-        float original = playerTransform.gameObject.GetComponent<Rigidbody>().linearDamping;
-        playerTransform.gameObject.GetComponent<Rigidbody>().linearDamping = 25.0f;
+        //float original = playerTransform.gameObject.GetComponent<Rigidbody>().linearDamping;
+        //playerTransform.gameObject.GetComponent<Rigidbody>().linearDamping = 25.0f;
         cooldownActive = true;
         shieldBashHitbox.enabled = true;
         yield return new WaitForSeconds(cooldown);
         shieldBashHitbox.enabled = false;
         cooldownActive = false;
-        playerTransform.gameObject.GetComponent<Rigidbody>().linearDamping = original;
+        //playerTransform.gameObject.GetComponent<Rigidbody>().linearDamping = original;
     }
     
     
