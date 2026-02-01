@@ -1542,9 +1542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 384c35ddb8fcd8b49b656fe8716e13a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageTeam:
-    serializedVersion: 2
-    m_Bits: 64
+  damageTeam: Enemy
   damage: 3
   OnDamaged:
     m_PersistentCalls:
@@ -2820,7 +2818,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2532304567243305168}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.70710576, z: -0, w: 0.70710784}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 84.25, y: 70.66, z: 100.24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2920,7 +2918,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <currHealth>k__BackingField: 0
   isPlayer: 0
-  maxHealth: 10
+  maxHealth: 3
   OnDamaged:
     m_PersistentCalls:
       m_Calls: []
@@ -2963,6 +2961,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 204628103375510480}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: rig|Dazed
+          m_BoolArgument: 1
+        m_CallState: 2
   OnDead:
     m_PersistentCalls:
       m_Calls:
@@ -2976,6 +2986,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 1
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 204628103375510480}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: rig|Death
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &6518363679314765890

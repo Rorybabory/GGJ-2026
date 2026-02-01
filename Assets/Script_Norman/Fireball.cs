@@ -23,20 +23,13 @@ public class Fireball : MonoBehaviour
         rb.linearVelocity -= new Vector3(0, gravity * Time.deltaTime, 0);
     }
 
-    /*public void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
-        
-        Debug.Log(other.gameObject.name);
-        //print("enter fireball collision");
-        
-        Health h =  other.gameObject.GetComponent<Health>();
-        if (h != null)
+        if (other.gameObject.tag == "Shield")
         {
-            OnDamaged.Invoke();
-            h.TakeDamage(dmg);
+            SELFDESTRUCT();
         }
-        GameObject.Destroy(this.gameObject);
-    }*/
+    }
 
     public void SELFDESTRUCT()
     {

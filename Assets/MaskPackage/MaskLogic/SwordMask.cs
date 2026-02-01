@@ -50,11 +50,11 @@ public class SwordMask : Mask
     {
         if (currentOwner.isPlayer)
         {
-            dmc.damageTeam = LayerMask.NameToLayer("Player");
+            dmc.damageTeam = "Player";
         }
         else
         {
-            dmc.damageTeam = LayerMask.NameToLayer("Enemy");
+            dmc.damageTeam = "Enemy";
         }
     }
 

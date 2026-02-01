@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using System.Collections;
+using AudioSystem;
 using UnityEngine.Events;
 
 public class Mask : MonoBehaviour
@@ -45,6 +46,10 @@ public class Mask : MonoBehaviour
         midTrade = true;
         this.Redirect();
         //fly to new owner (currentOwner value)
+        if (AudioManager.instance != null)
+        {
+            AudioManager.instance.PlayAudio("mask_pull");
+        }
         StartCoroutine(FlyingCoroutine(newOwner));
     }
 

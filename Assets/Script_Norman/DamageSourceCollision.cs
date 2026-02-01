@@ -4,18 +4,18 @@ using UnityEngine.Events;
 
 public class DamageSourceCollision : MonoBehaviour
 {
-    [SerializeField] public LayerMask damageTeam;
+    [SerializeField] public string damageTeam;
     [SerializeField] private float damage;
     //[SerializeField] private float perSecond;
     public UnityEvent OnDamaged;
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == damageTeam) return;
+        if (other.gameObject.CompareTag(damageTeam)) return;
         //if (perSecond > 0) return;
         Health h = other.GetComponent<Health>();
         if (h != null)
         {
-            OnDamaged.Invoke();
+            //OnDamaged.Invoke();
             h.TakeDamage(damage);
         }
     }

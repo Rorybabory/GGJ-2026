@@ -28,7 +28,7 @@ public class WEAPONDATA : MonoBehaviour
         }
         else if (mHolder.heldMask is FireballMask)
         {
-            
+            sword.SetActive(false);
         }
         else
         {

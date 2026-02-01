@@ -25,11 +25,15 @@ public class ShieldMask : Mask
         if (cooldownActive) return;
         if (currentOwner.isPlayer)
         {
-            currentOwner.rb.AddForce(currentOwner.cam.forward * force, ForceMode.Impulse);
+            Vector3 finalforce = currentOwner.cam.forward * force;
+            finalforce = new  Vector3(finalforce.x, 0f, finalforce.z);
+            currentOwner.rb.AddForce(finalforce, ForceMode.Impulse);
         }
         else
         {
-            currentOwner.rb.AddForce((playerTransform.position - currentOwner.transform.position) * force, ForceMode.Impulse);
+            /*Vector3 finalforce = (playerTransform.position - currentOwner.transform.position) * force;
+            finalforce = new  Vector3(finalforce.x, 0f, finalforce.z);
+            currentOwner.rb.AddForce(finalforce, ForceMode.Impulse);*/
         }
 
         StartCoroutine(cooldownRoutine());
@@ -37,14 +41,14 @@ public class ShieldMask : Mask
     
     private IEnumerator cooldownRoutine()
     {
-        float original = playerTransform.gameObject.GetComponent<Rigidbody>().linearDamping;
-        playerTransform.gameObject.GetComponent<Rigidbody>().linearDamping = 25.0f;
+        //float original = playerTransform.gameObject.GetComponent<Rigidbody>().linearDamping;
+        //playerTransform.gameObject.GetComponent<Rigidbody>().linearDamping = 25.0f;
         cooldownActive = true;
         shieldBashHitbox.enabled = true;
         yield return new WaitForSeconds(cooldown);
         shieldBashHitbox.enabled = false;
         cooldownActive = false;
-        playerTransform.gameObject.GetComponent<Rigidbody>().linearDamping = original;
+        //playerTransform.gameObject.GetComponent<Rigidbody>().linearDamping = original;
     }
     
     
