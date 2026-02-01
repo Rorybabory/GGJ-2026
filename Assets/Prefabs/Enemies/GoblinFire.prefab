@@ -10540,7 +10540,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <currHealth>k__BackingField: 0
   isPlayer: 0
-  maxHealth: 10
+  maxHealth: 3
   OnDamaged:
     m_PersistentCalls:
       m_Calls: []
