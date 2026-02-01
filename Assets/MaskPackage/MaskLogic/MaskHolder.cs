@@ -40,7 +40,7 @@ public class MaskHolder : MonoBehaviour
     void Start()
     {
         //castLayerMask = LayerMask.NameToLayer("Mask");
-        Debug.Log(castLayerMask);
+        
         if (transform.gameObject.CompareTag("Player"))
         {
             isPlayer = true;
