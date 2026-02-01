@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class PlayerHandUI : MonoBehaviour
 {
-    [SerializeField] private Image image;
     [SerializeField] private HandUIResource handData;
     //[SerializeField] private GameObject swordHandPrefab;
     [SerializeField] private MaskHolder mholder;

@@ -5,6 +5,7 @@ using UnityEngine.AI;
 public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent agent;
+    public float range;
     private Transform playerTransform;
 
     private void Start()
@@ -12,8 +13,18 @@ public class EnemyMovement : MonoBehaviour
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    public void FollowPlayer()
+    public bool FollowPlayerUntilAttackRange(bool IsAttacking)
     {
-        agent.SetDestination(playerTransform.position);
+        if (Vector3.Distance(transform.position, playerTransform.position) <= range)
+        {
+            agent.SetDestination(transform.position);
+            return true;
+        }
+
+        if (!IsAttacking)
+        {
+            agent.SetDestination(playerTransform.position);
+        }
+        return false;
     }
 }

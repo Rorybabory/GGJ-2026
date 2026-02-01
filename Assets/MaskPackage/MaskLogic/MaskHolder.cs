@@ -65,6 +65,7 @@ public class MaskHolder : MonoBehaviour
 
     private void OnAbility(InputValue value)
     {
+        Debug.Log(value.Get<float>());
         if (!heldMask)
             return;
         
@@ -73,12 +74,13 @@ public class MaskHolder : MonoBehaviour
 
     private void OnSteal(InputValue value)
     {
+        print("enmter steal1");
         if (heldMaskObj != null && !heldMask.midTrade)
         {
             Discard();
             return;
         }
-        
+        print("enmter steal2");
         if (!cooldownReady)
             return;
         cooldownReady = false;
@@ -92,16 +94,17 @@ public class MaskHolder : MonoBehaviour
         //Cast to find stealable mask
         if (Physics.SphereCast(ray, castRadius, out RaycastHit hit, castDistance, castLayerMask))
         {
+            Debug.Log(hit.collider.gameObject.name);
             MaskHolder mhd = hit.collider.gameObject.GetComponentInParent<MaskHolder>();
             if (mhd != null)
             {
                 if (!mhd.isStaggered)
                 {
-                    Debug.Log(hit.collider.gameObject.name);
+                    cooldownReady = true;
                     return;
                 }
             }
-
+            Debug.Log(hit.collider.gameObject.name);
             heldMask = hit.transform.GetComponent<Mask>();
             heldMask.currentOwner.GetComponent<MaskHolder>().heldMask = heldMask;
             heldMask.currentOwner.heldMask = null;
@@ -154,5 +157,10 @@ public class MaskHolder : MonoBehaviour
 
         Health h = GetComponent<Health>();
         h.Kill();
+    }
+
+    public void DoAbility()
+    {
+        heldMask.Ability(1); // 0 is placeholder
     }
 }
