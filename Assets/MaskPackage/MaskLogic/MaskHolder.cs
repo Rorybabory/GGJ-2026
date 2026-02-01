@@ -95,8 +95,8 @@ public class MaskHolder : MonoBehaviour
         ray.origin = cam.position;
         ray.direction = cam.forward;
         //Cast to find stealable mask
-        if (Physics.SphereCast(ray, castRadius, out RaycastHit hit, castDistance, castLayerMask))
-        //if (Physics.Raycast(ray, out RaycastHit hit, castDistance, castLayerMask))
+        //if (Physics.SphereCast(ray, castRadius, out RaycastHit hit, castDistance, castLayerMask))
+        if (Physics.Raycast(ray, out RaycastHit hit, castDistance, castLayerMask))
         {
             if (hit.collider.gameObject.layer != LayerMask.NameToLayer("Mask"))
             {
