@@ -25,7 +25,6 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - _SPECULAR_SETUP
   - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords: []
   m_LightmapFlags: 2
@@ -41,7 +40,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Texture:
-        m_Texture: {fileID: 10309, guid: 0000000000000000f000000000000000, type: 0}
+        m_Texture: {fileID: 2800000, guid: 4a8afe15a92cd134b8c461efb7a9db72, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -63,24 +62,26 @@ Material:
     - _Blend: 0
     - _BlendModePreserveSpecular: 0
     - _CastShadows: 1
-    - _Cull: 0
+    - _Cull: 2
     - _CutoffHeight: 50
     - _DstBlend: 10
     - _EdgeWidth: -5
-    - _NoiseScale: 60
+    - _Metallic: 0
+    - _NoiseScale: 30
     - _NoiseStrength: 50
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
+    - _Smoothness: 0
     - _SrcBlend: 5
     - _Surface: 1
-    - _WorkflowMode: 0
+    - _WorkflowMode: 1
     - _ZTest: 4
     - _ZWrite: 1
     - _ZWriteControl: 1
     m_Colors:
     - _Albedo: {r: 1, g: 0, b: 0.039466858, a: 1}
-    - _BaseColor: {r: 0, g: 0.43152118, b: 1, a: 1}
-    - _EdgeColor: {r: 0, g: 274.3739, b: 241.24548, a: 1}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _EdgeColor: {r: 0, g: 5.9921575, b: 5.2686534, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
