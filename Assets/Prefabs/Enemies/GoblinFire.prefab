@@ -9862,6 +9862,9 @@ MonoBehaviour:
   currentOwner: {fileID: 1625851760293882989}
   midTrade: 0
   range: 15
+  ObtainWeapon:
+    m_PersistentCalls:
+      m_Calls: []
   fireballPrefab: {fileID: 4928396299961788432, guid: 657d16a9cd85d5943be5cc7ddc484c0c, type: 3}
 --- !u!1 &8001533654202246748
 GameObject:
@@ -10402,7 +10405,7 @@ GameObject:
   - component: {fileID: 1625851760293882989}
   m_Layer: 6
   m_Name: GoblinFire
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10599,6 +10602,9 @@ MonoBehaviour:
   rb: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   isStaggered: 0
+  UseWeapon:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8787275864056608577
 GameObject:
   m_ObjectHideFlags: 0
