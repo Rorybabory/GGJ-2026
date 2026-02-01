@@ -10009,6 +10009,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   fireballPrefab: {fileID: 4928396299961788432, guid: 657d16a9cd85d5943be5cc7ddc484c0c, type: 3}
+  disintegrateMaskPrefab: {fileID: 904220573101231475, guid: 1897038b8f1cd364f86ac7ea8778f214, type: 3}
+  maskModelTransform: {fileID: 5409205009428363815}
 --- !u!1 &8001533654202246748
 GameObject:
   m_ObjectHideFlags: 0
@@ -11318,6 +11320,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d45c66de52630f541b226b6db4d13030, type: 3}
+--- !u!4 &5409205009428363815 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2629088802523602712, guid: d45c66de52630f541b226b6db4d13030, type: 3}
+  m_PrefabInstance: {fileID: 8029140893042599231}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6390253012508045436 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4018196408496854339, guid: d45c66de52630f541b226b6db4d13030, type: 3}

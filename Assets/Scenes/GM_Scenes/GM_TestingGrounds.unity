@@ -1250,6 +1250,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 534470064354481883, guid: d45c66de52630f541b226b6db4d13030, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 26182bffa258c734b92d7cf8e24d8bcc, type: 2}
     - target: {fileID: 2924184158172575090, guid: d45c66de52630f541b226b6db4d13030, type: 3}
       propertyPath: m_Name
       value: Fire Mask

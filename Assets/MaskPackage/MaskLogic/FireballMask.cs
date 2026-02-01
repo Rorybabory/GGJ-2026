@@ -6,6 +6,8 @@ public class FireballMask : Mask
     public GameObject fireballPrefab;
     private Transform playerTransform;
     private DamageSourceCollision dmc;
+    [SerializeField] private GameObject disintegrateMaskPrefab;
+    [SerializeField] private Transform maskModelTransform;
     private void Start()
     {
         playerTransform = GameObject.FindAnyObjectByType<PlayerMovement>().transform;
@@ -22,5 +24,10 @@ public class FireballMask : Mask
         Vector3 direction = (playerTransform.position - firePoint.position).normalized;
         Quaternion rotation = Quaternion.LookRotation(direction);
         GameObject obj = GameObject.Instantiate(fireballPrefab, firePoint.position, rotation);
+    }
+    
+    private void OnDestroy()
+    {
+        Instantiate(disintegrateMaskPrefab, maskModelTransform.position, maskModelTransform.rotation);
     }
 }
