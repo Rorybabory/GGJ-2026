@@ -38,7 +38,7 @@ public class SwordMask : Mask
             swordtimer += Time.deltaTime;
             if (swordtimer >= 0.1f)
             {
-                swordCollider.enabled = false;
+                //swordCollider.enabled = false;
             }
         }
 
