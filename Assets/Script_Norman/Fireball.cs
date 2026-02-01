@@ -8,8 +8,8 @@ public class Fireball : MonoBehaviour
     public Rigidbody rb;
     public Vector3 spawnForce;
     public float gravity;
-    public float dmg = 1f;
-    public UnityEvent OnDamaged;
+    //public float dmg = 1f;
+    //public UnityEvent OnDamaged;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,9 +23,11 @@ public class Fireball : MonoBehaviour
         rb.linearVelocity -= new Vector3(0, gravity * Time.deltaTime, 0);
     }
 
-    public void OnTriggerEnter(Collider other)
+    /*public void OnTriggerEnter(Collider other)
     {
-        print("enter fireball collision");
+        
+        Debug.Log(other.gameObject.name);
+        //print("enter fireball collision");
         
         Health h =  other.gameObject.GetComponent<Health>();
         if (h != null)
@@ -33,6 +35,11 @@ public class Fireball : MonoBehaviour
             OnDamaged.Invoke();
             h.TakeDamage(dmg);
         }
+        GameObject.Destroy(this.gameObject);
+    }*/
+
+    public void SELFDESTRUCT()
+    {
         GameObject.Destroy(this.gameObject);
     }
 }

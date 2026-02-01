@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5963910661017330145}
   - component: {fileID: 4671834766259836577}
   - component: {fileID: 579285855627051280}
+  - component: {fileID: 7792169049528779805}
   m_Layer: 9
   m_Name: FireBall
   m_TagString: Untagged
@@ -75,12 +76,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 5963910661017330145}
-  spawnForce: {x: 0, y: 0, z: 45}
-  gravity: 0.25
-  dmg: 3
-  OnDamaged:
-    m_PersistentCalls:
-      m_Calls: []
+  spawnForce: {x: 0, y: 5, z: 30}
+  gravity: 0
 --- !u!135 &579285855627051280
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -102,6 +99,37 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7792169049528779805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4928396299961788432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 384c35ddb8fcd8b49b656fe8716e13a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageTeam:
+    serializedVersion: 2
+    m_Bits: 64
+  damage: 3
+  OnDamaged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4671834766259836577}
+        m_TargetAssemblyTypeName: Fireball, Assembly-CSharp
+        m_MethodName: SELFDESTRUCT
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &8591879288449022697
 PrefabInstance:
   m_ObjectHideFlags: 0
