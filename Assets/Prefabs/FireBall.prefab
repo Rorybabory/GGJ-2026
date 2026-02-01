@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4573720137914132538}
   - component: {fileID: 517456080000730470}
   - component: {fileID: 6678854682743853222}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GunAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 5281663932010850815}
   - component: {fileID: 5963910661017330145}
   - component: {fileID: 4671834766259836577}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FireBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -204,7 +204,7 @@ GameObject:
   - component: {fileID: 1353598664115463285}
   - component: {fileID: 1485480492533630828}
   - component: {fileID: 7149021344077989142}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
