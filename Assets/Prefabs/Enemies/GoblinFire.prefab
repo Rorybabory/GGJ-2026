@@ -5044,7 +5044,7 @@ Transform:
   m_GameObject: {fileID: 3774230144798315416}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.058, z: 1.11}
+  m_LocalPosition: {x: 0, y: 0.18, z: 1.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9770,6 +9770,7 @@ GameObject:
   - component: {fileID: 1780711356279607323}
   - component: {fileID: 3207617241227615338}
   - component: {fileID: 8397575289023902905}
+  - component: {fileID: 1349487342771365848}
   - component: {fileID: 2133575298644364731}
   m_Layer: 8
   m_Name: FireMask
@@ -9847,6 +9848,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &1349487342771365848
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7980260188543876164}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 2
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2133575298644364731
 MonoBehaviour:
   m_ObjectHideFlags: 0

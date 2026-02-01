@@ -16387,7 +16387,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &828723469
 Transform:
   m_ObjectHideFlags: 0
@@ -20015,7 +20015,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1106529423
 Transform:
   m_ObjectHideFlags: 0
@@ -35484,6 +35484,14 @@ PrefabInstance:
       propertyPath: castLayerMask.m_Bits
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1190634748404212862, guid: bbbb0ec7415eac1488179e43b209e29a, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1190634748404212862, guid: bbbb0ec7415eac1488179e43b209e29a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2045242048713096170, guid: bbbb0ec7415eac1488179e43b209e29a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 90
@@ -35534,7 +35542,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8135869934351496691, guid: bbbb0ec7415eac1488179e43b209e29a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -37440,6 +37448,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GoblinEarth
       objectReference: {fileID: 0}
+    - target: {fileID: 2532304567243305168, guid: 1307f8e0bf18f854da435690f82ff277, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4980527355315165970, guid: 1307f8e0bf18f854da435690f82ff277, type: 3}
       propertyPath: m_LocalPosition.x
       value: 84.25
@@ -37482,11 +37494,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8893055464048611260, guid: 1307f8e0bf18f854da435690f82ff277, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8893055464048611260, guid: 1307f8e0bf18f854da435690f82ff277, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -37545,6 +37557,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GoblinWater
       objectReference: {fileID: 0}
+    - target: {fileID: 5261523926720513689, guid: 2fc93a117ddb0664897b4c981ffdfc27, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7677410012312225536, guid: 2fc93a117ddb0664897b4c981ffdfc27, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -37569,6 +37585,10 @@ PrefabInstance:
     - target: {fileID: 2534987667076631161, guid: 1fe0cda851c590d4bb39133c9fac319d, type: 3}
       propertyPath: m_Name
       value: GoblinMaskless
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534987667076631161, guid: 1fe0cda851c590d4bb39133c9fac319d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6867080504121126033, guid: 1fe0cda851c590d4bb39133c9fac319d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -37612,11 +37632,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8218573389635188231, guid: 1fe0cda851c590d4bb39133c9fac319d, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8218573389635188231, guid: 1fe0cda851c590d4bb39133c9fac319d, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -37673,15 +37693,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1937999215754365237, guid: 4f2bf6d3f5d33714e8a06acd57a3bbbf, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1937999215754365237, guid: 4f2bf6d3f5d33714e8a06acd57a3bbbf, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3117763443456792211, guid: 4f2bf6d3f5d33714e8a06acd57a3bbbf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3117763443456792211, guid: 4f2bf6d3f5d33714e8a06acd57a3bbbf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3117763443456792211, guid: 4f2bf6d3f5d33714e8a06acd57a3bbbf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.22
       objectReference: {fileID: 0}
     - target: {fileID: 8775590138030096951, guid: 4f2bf6d3f5d33714e8a06acd57a3bbbf, type: 3}
       propertyPath: m_Name
       value: GoblinFire
+      objectReference: {fileID: 0}
+    - target: {fileID: 8775590138030096951, guid: 4f2bf6d3f5d33714e8a06acd57a3bbbf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
