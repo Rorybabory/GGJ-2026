@@ -27,4 +27,9 @@ public class EnemyMovement : MonoBehaviour
         }
         return false;
     }
+
+    private void Update()
+    {
+        
+    }
 }
