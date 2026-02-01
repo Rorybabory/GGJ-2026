@@ -4,7 +4,6 @@ public class SwordMask : Mask
 {
     [SerializeField] private GameObject swordPrefab;
     [SerializeField] private Transform armRig;
-    [SerializeField] private Transform swordPivot;
     [SerializeField] private Collider swordCollider;
     private DamageSourceCollision dmc;
     private float swordtimer = 0f;
@@ -20,7 +19,6 @@ public class SwordMask : Mask
         dmc = swordCollider.GetComponent<DamageSourceCollision>();
         if (currentOwner.isPlayer)
         {
-            spawnObj = Instantiate(swordPrefab, swordPivot);
         }
         else
         {
@@ -38,7 +36,7 @@ public class SwordMask : Mask
             swordtimer += Time.deltaTime;
             if (swordtimer >= 0.1f)
             {
-                //swordCollider.enabled = false;
+                swordCollider.enabled = false;
             }
         }
 
