@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2687827596336824645}
   - component: {fileID: 3847875520055042504}
+  - component: {fileID: 4069101644564792288}
   m_Layer: 8
   m_Name: SwordAtackCollide
   m_TagString: Untagged
@@ -53,6 +54,22 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 3
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4069101644564792288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6205977892001779580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 384c35ddb8fcd8b49b656fe8716e13a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageTeam:
+    serializedVersion: 2
+    m_Bits: 64
+  damage: 3
 --- !u!1 &8478899847681751732
 GameObject:
   m_ObjectHideFlags: 0
@@ -65,7 +82,7 @@ GameObject:
   - component: {fileID: 5076827853018168552}
   - component: {fileID: 2776275532836925019}
   - component: {fileID: 2840916203535621509}
-  - component: {fileID: 2342142001387827008}
+  - component: {fileID: 230813726607579797}
   m_Layer: 8
   m_Name: SwordMask
   m_TagString: Untagged
@@ -163,7 +180,7 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 2
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2342142001387827008
+--- !u!114 &230813726607579797
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -172,10 +189,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 8478899847681751732}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1ac9380f1a81ab43b043965bab3739c, type: 3}
+  m_Script: {fileID: 11500000, guid: 078796143cc565f42a279b6a8a6966cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   currentOwner: {fileID: 0}
   midTrade: 0
-  force: 300
-  cooldown: 3
+  range: 4
+  swordPrefab: {fileID: 2004715289959652907, guid: 60c9b55a57c351541910bb03a7b3486e, type: 3}
+  armRig: {fileID: 0}
+  swordPivot: {fileID: 0}
+  swordCollider: {fileID: 3847875520055042504}

@@ -43,9 +43,9 @@ public class PlayerCamera : MonoBehaviour
         /*currentX = Mathf.Lerp(currentX, xRotation, Time.deltaTime);
         currentY = Mathf.Lerp(currentY, yRotation, Time.deltaTime);*/
         
-        cameraPivotTransform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        cameraPivotTransform.localRotation = Quaternion.Euler(xRotation, yRotation, 0f);
 
         // Yaw
-        transform.Rotate(Vector3.up * mouseX);
+        //transform.Rotate(Vector3.up * mouseX);
     }
 }

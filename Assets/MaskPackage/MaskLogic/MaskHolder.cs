@@ -14,7 +14,6 @@ public class MaskHolder : MonoBehaviour
     public GameObject heldMaskObj = null;
     public Transform maskHolderSpot;
     
-    
     [HideInInspector]
     public bool transferring = false;
     [HideInInspector]
@@ -65,7 +64,7 @@ public class MaskHolder : MonoBehaviour
 
     private void OnAbility(InputValue value)
     {
-        Debug.Log(value.Get<float>());
+        Debug.Log("value.Get<float>()");
         if (!heldMask)
             return;
         
@@ -94,7 +93,6 @@ public class MaskHolder : MonoBehaviour
         //Cast to find stealable mask
         if (Physics.SphereCast(ray, castRadius, out RaycastHit hit, castDistance, castLayerMask))
         {
-            Debug.Log(hit.collider.gameObject.name);
             MaskHolder mhd = hit.collider.gameObject.GetComponentInParent<MaskHolder>();
             if (mhd != null)
             {
@@ -105,6 +103,13 @@ public class MaskHolder : MonoBehaviour
                 }
             }
             //Debug.Log(hit.collider.gameObject.name);
+            if (hit.transform.GetComponent<Mask>().currentOwner == null)
+            {
+                return;
+            }else if (hit.transform.GetComponent<Mask>().currentOwner.GetComponent<MaskHolder>() == null)
+            {
+                return;
+            }
             heldMask = hit.transform.GetComponent<Mask>();
             heldMask.currentOwner.GetComponent<MaskHolder>().heldMask = heldMask;
             heldMask.currentOwner.heldMask = null;

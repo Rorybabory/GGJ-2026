@@ -4,7 +4,6 @@ public class SwordMask : Mask
 {
     [SerializeField] private GameObject swordPrefab;
     [SerializeField] private Transform armRig;
-    [SerializeField] private Transform swordPivot;
     [SerializeField] private Collider swordCollider;
     private DamageSourceCollision dmc;
     private float swordtimer = 0f;
@@ -20,7 +19,6 @@ public class SwordMask : Mask
         dmc = swordCollider.GetComponent<DamageSourceCollision>();
         if (currentOwner.isPlayer)
         {
-            spawnObj = Instantiate(swordPrefab, swordPivot);
         }
         else
         {
