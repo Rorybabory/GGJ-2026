@@ -14,7 +14,11 @@ public class Health : MonoBehaviour
     public float GetMaxHealth(){ return maxHealth; }
     
     public UnityEvent OnDamaged;
+    public UnityEvent OnStaggered;
     public UnityEvent OnDead;
+    
+    private bool hasStaggered = false;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,7 +27,17 @@ public class Health : MonoBehaviour
 
     private void Update()
     {
-        if (currHealth <= 0)
+        if (currHealth == 0 && !hasStaggered)
+        {
+            hasStaggered = true;
+            if (isPlayer)
+            {
+                OnDead.Invoke();
+                return;
+            }
+            OnStaggered.Invoke();
+            
+        }else if (currHealth < 0)
         {
             OnDead.Invoke();
         }
@@ -31,7 +45,20 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        currHealth -= damage;
+        if (currHealth > 0 && currHealth < damage)
+        {
+            currHealth = 0;
+        }
+        else
+        {
+            currHealth -= damage;
+        }
+        
         OnDamaged.Invoke();
+    }
+
+    public void Kill()
+    {
+        currHealth = -3;
     }
 }

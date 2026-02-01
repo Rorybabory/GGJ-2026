@@ -22,6 +22,7 @@ public class Mask : MonoBehaviour
             transform.parent = currentOwner.maskHolderSpot;
             transform.localPosition = Vector3.zero;
             transform.localRotation = Quaternion.identity;
+            currentOwner.heldMask = this;
         }
         
         firePoint = transform.GetChild(0);

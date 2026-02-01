@@ -14,4 +14,9 @@ public class EnemyBehaviorController : MonoBehaviour
     {
         enemyMoveCode.FollowPlayer();
     }
+
+    public void Staggered()
+    {
+        
+    }
 }
