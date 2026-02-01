@@ -25,11 +25,15 @@ public class ShieldMask : Mask
         if (cooldownActive) return;
         if (currentOwner.isPlayer)
         {
-            currentOwner.rb.AddForce(currentOwner.cam.forward * force, ForceMode.Impulse);
+            Vector3 finalforce = currentOwner.cam.forward * force;
+            finalforce = new  Vector3(finalforce.x, 0f, finalforce.z);
+            currentOwner.rb.AddForce(finalforce, ForceMode.Impulse);
         }
         else
         {
-            currentOwner.rb.AddForce((playerTransform.position - currentOwner.transform.position) * force, ForceMode.Impulse);
+            Vector3 finalforce = (playerTransform.position - currentOwner.transform.position) * force;
+            finalforce = new  Vector3(finalforce.x, 0f, finalforce.z);
+            currentOwner.rb.AddForce(finalforce, ForceMode.Impulse);
         }
 
         StartCoroutine(cooldownRoutine());

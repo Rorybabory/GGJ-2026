@@ -37482,6 +37482,10 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6684061799295463252, guid: 2fc93a117ddb0664897b4c981ffdfc27, type: 3}
+      propertyPath: range
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684061799295463252, guid: 2fc93a117ddb0664897b4c981ffdfc27, type: 3}
       propertyPath: cooldown
       value: 2
       objectReference: {fileID: 0}

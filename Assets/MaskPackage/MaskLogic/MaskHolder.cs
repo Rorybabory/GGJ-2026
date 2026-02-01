@@ -35,6 +35,9 @@ public class MaskHolder : MonoBehaviour
     public bool isStaggered = false;
 
     public UnityEvent UseWeapon;
+
+    private float delaydiscard = 0.2f;
+    private float timer = 0.0f;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -75,20 +78,33 @@ public class MaskHolder : MonoBehaviour
         heldMask.Ability(value.Get<float>());
     }
 
-    private void OnSteal(InputValue value)
+    private void OnDiscard(InputValue value)
     {
-        print("enmter steal1");
         if (heldMaskObj != null && !heldMask.midTrade)
         {
             Discard();
             return;
         }
-        print("enmter steal2");
+    }
+
+    private void OnSteal(InputValue value)
+    {
+        /*if (heldMaskObj != null && !heldMask.midTrade)
+        {
+            timer += Time.deltaTime;
+        }
+        
+        if (heldMaskObj != null && !heldMask.midTrade && timer >= delaydiscard)
+        {
+            Discard();
+            timer = 0.0f;
+            return;
+        }*/
+
         if (!cooldownReady)
             return;
         cooldownReady = false;
-
-        print("enmter steal");
+        
         
         
         Ray ray = new Ray();
