@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class DamageSourceCollision : MonoBehaviour
 {
-    [SerializeField] private LayerMask damageTeam;
+    [SerializeField] public LayerMask damageTeam;
     [SerializeField] private float damage;
     //[SerializeField] private float perSecond;
-    
+
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == damageTeam) return;

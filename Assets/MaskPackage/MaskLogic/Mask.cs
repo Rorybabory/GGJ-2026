@@ -13,6 +13,8 @@ public class Mask : MonoBehaviour
     [HideInInspector]
     public bool midTrade = false;
 
+    public float range;
+
     private Transform firePoint;
     
     private void OnEnable()
@@ -62,7 +64,7 @@ public class Mask : MonoBehaviour
             
             //transform.position = Vector3.Lerp(prevOwnPos, newOwner.maskHolderSpot.position, timer / 1);
             //timer += Time.deltaTime;
-            Debug.Log(timer/duration);
+            //Debug.Log(timer/duration);
             yield return null;
         }
         transform.position = newOwner.maskHolderSpot.position;

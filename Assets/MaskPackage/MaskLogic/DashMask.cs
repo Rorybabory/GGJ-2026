@@ -23,7 +23,7 @@ public class DashMask : Mask
 
     private void OnTriggerEnter(Collider other)
     {
-        print("velocity " + currentOwner.velocity);
+        //print("velocity " + currentOwner.velocity);
         if (currentOwner.velocity.magnitude < 10)
         {
             return;
