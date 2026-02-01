@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.LowLevelPhysics;
 using System.Collections;
+using UnityEngine.Events;
 
 public class MaskHolder : MonoBehaviour
 {
@@ -32,6 +33,8 @@ public class MaskHolder : MonoBehaviour
     public Vector3 velocity;
     private Vector3 previousPos;
     public bool isStaggered = false;
+
+    public UnityEvent UseWeapon;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -64,10 +67,9 @@ public class MaskHolder : MonoBehaviour
 
     private void OnAbility(InputValue value)
     {
-        Debug.Log("value.Get<float>()");
         if (!heldMask)
             return;
-        
+        UseWeapon.Invoke();
         heldMask.Ability(value.Get<float>());
     }
 

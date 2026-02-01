@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Events;
 
 public class Mask : MonoBehaviour
 {
@@ -16,7 +17,8 @@ public class Mask : MonoBehaviour
     public float range;
 
     protected Transform firePoint;
-    
+    public UnityEvent ObtainWeapon; // when the mask hit
+
     private void OnEnable()
     {
         if (currentOwner != null)
@@ -68,6 +70,7 @@ public class Mask : MonoBehaviour
             yield return null;
         }
         transform.position = newOwner.maskHolderSpot.position;
+        ObtainWeapon.Invoke();
         currentOwner = newOwner;
         transform.parent = newOwner.maskHolderSpot;
         transform.localPosition = Vector3.zero;
