@@ -178,7 +178,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 2
+  m_Radius: 1.25
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &230813726607579797
 MonoBehaviour:
@@ -195,7 +195,9 @@ MonoBehaviour:
   currentOwner: {fileID: 0}
   midTrade: 0
   range: 4
+  ObtainWeapon:
+    m_PersistentCalls:
+      m_Calls: []
   swordPrefab: {fileID: 2004715289959652907, guid: 60c9b55a57c351541910bb03a7b3486e, type: 3}
   armRig: {fileID: 0}
-  swordPivot: {fileID: 0}
   swordCollider: {fileID: 3847875520055042504}
