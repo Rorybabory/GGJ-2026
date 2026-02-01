@@ -359,6 +359,9 @@ MonoBehaviour:
   currentOwner: {fileID: 6518363679314765890}
   midTrade: 0
   range: 4
+  ObtainWeapon:
+    m_PersistentCalls:
+      m_Calls: []
   swordPrefab: {fileID: 2004715289959652907, guid: 60c9b55a57c351541910bb03a7b3486e, type: 3}
   armRig: {fileID: 8448974763438172156}
   swordCollider: {fileID: 8862336948759608864}
@@ -1543,6 +1546,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   damage: 3
+  OnDamaged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1243573189252485441
 GameObject:
   m_ObjectHideFlags: 0
@@ -2801,7 +2807,7 @@ GameObject:
   - component: {fileID: 6518363679314765890}
   m_Layer: 6
   m_Name: GoblinEarth
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2998,6 +3004,9 @@ MonoBehaviour:
   rb: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   isStaggered: 0
+  UseWeapon:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2560893308876258000
 GameObject:
   m_ObjectHideFlags: 0
