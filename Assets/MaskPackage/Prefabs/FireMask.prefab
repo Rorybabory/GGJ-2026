@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 3951329697244376688}
   - component: {fileID: 2305118846318321793}
   - component: {fileID: 3898844623127630426}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: FireMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
