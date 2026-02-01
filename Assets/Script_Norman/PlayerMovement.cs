@@ -80,7 +80,7 @@ public class PlayerMovement : MonoBehaviour
         //    targetVelocity.z
         //);
         rb.linearVelocity += targetVelocity * Time.deltaTime;
-        rb.linearVelocity = Vector3.Lerp(rb.linearVelocity, new Vector3(0.0f, rb.linearVelocity.y, 0.0f), Time.deltaTime * 3.0f);
+        rb.linearVelocity = Vector3.Lerp(rb.linearVelocity, new Vector3(0.0f, rb.linearVelocity.y, 0.0f), Time.deltaTime * 8.0f);
 
     }
 
