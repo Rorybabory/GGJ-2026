@@ -6389,6 +6389,9 @@ MonoBehaviour:
   rb: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   isStaggered: 0
+  UseWeapon:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5280591304357111926
 GameObject:
   m_ObjectHideFlags: 0
@@ -6950,9 +6953,8 @@ GameObject:
   - component: {fileID: 3739335835885038261}
   - component: {fileID: 8691155867748083362}
   - component: {fileID: 6741123744385631250}
-  - component: {fileID: 5333128124512777233}
   - component: {fileID: 6684061799295463252}
-  - component: {fileID: 2381304496361350622}
+  - component: {fileID: 3507523514486904384}
   m_Layer: 8
   m_Name: WaterMask
   m_TagString: Untagged
@@ -6973,8 +6975,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8714538927495356014}
   - {fileID: 8718808241478030161}
+  - {fileID: 8714538927495356014}
   m_Father: {fileID: 3663750102871592564}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8691155867748083362
@@ -7029,8 +7031,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5333128124512777233
-BoxCollider:
+--- !u!114 &6684061799295463252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5694456788507457934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58393e3cb2b4a4242956c3945e887969, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentOwner: {fileID: 2240834601883056418}
+  midTrade: 0
+  range: 4
+  ObtainWeapon:
+    m_PersistentCalls:
+      m_Calls: []
+  shield: {fileID: 3946142079527042997}
+  shieldSpeed: 1000
+  bounce: 10
+--- !u!135 &3507523514486904384
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -7048,53 +7071,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 0.7313156, z: 0.38602448}
-  m_Center: {x: -1.0658141e-13, y: -0.34942245, z: 1.6280137}
---- !u!114 &6684061799295463252
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5694456788507457934}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58393e3cb2b4a4242956c3945e887969, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentOwner: {fileID: 2240834601883056418}
-  midTrade: 0
-  range: 4
-  shield: {fileID: 0}
-  shieldSpeed: 1000
-  bounce: 10
---- !u!54 &2381304496361350622
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5694456788507457934}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  m_Radius: 2
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5706704468499806875
 GameObject:
   m_ObjectHideFlags: 0
