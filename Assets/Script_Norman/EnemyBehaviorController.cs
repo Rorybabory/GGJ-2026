@@ -8,6 +8,7 @@ public class EnemyBehaviorController : MonoBehaviour
     public static float startdelayAttack = 0.41f; // might not used
     public static float attackCooldown = 2.083f;
     [SerializeField] private float staggerDuration = 2.0f;
+    private Transform playerTransform;
     private float staggerTimer = 0.0f;
     private float attackTimer = 0.0f;
     private float attackCooldownFake = 0.0f;
@@ -22,6 +23,7 @@ public class EnemyBehaviorController : MonoBehaviour
     {
         attackTimer = 100f;
         attackCooldownFake = startdelayAttack;
+        playerTransform = FindAnyObjectByType<PlayerMovement>().transform;
     }
 
     // Update is called once per frame
@@ -56,6 +58,7 @@ public class EnemyBehaviorController : MonoBehaviour
 
         if (IsAttacking)
         {
+            RotateToFacePlayer();
             if (mholder.heldMask != null)
             {
                 attackTimer += Time.deltaTime;
@@ -67,6 +70,16 @@ public class EnemyBehaviorController : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void RotateToFacePlayer()
+    {
+        Vector3 direction = playerTransform.position - transform.position;
+        direction.y = 0f; // keep enemy upright (no vertical tilt)
+
+        if (direction.sqrMagnitude < 0.001f) return;
+        
+        transform.rotation = Quaternion.LookRotation(direction);
     }
 
     public void Staggered()
