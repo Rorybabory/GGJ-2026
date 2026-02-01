@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handPrefab: {fileID: 2961497438641576993, guid: 7aa5780fbbc5ea849957ea030c09d3d0, type: 3}
   idleAnimation: {fileID: 7400000, guid: 34d4aaea0ff0abc41ae67089aed081fb, type: 2}
-  LclickAnimation: {fileID: 0}
+  LclickAnimation: {fileID: 7400000, guid: fb32dc1f371926f44906c75ea4b28599, type: 2}
   RclickAnimation: {fileID: 7400000, guid: db4adf17cc1fcda4caf9add5071f8e82, type: 2}

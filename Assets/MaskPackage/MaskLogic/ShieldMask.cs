@@ -8,16 +8,48 @@ public class ShieldMask : Mask
     public Transform shield;
     public float shieldSpeed = 10f;
     public float bounce = 50f;
+    public float force;
+    public float cooldown = 1f;
+    public Collider shieldBashHitbox;
+    public Transform playerTransform;
+    private bool cooldownActive = false;
 
-    private Collider shieldCollider;
-    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        shieldCollider = shield.GetComponent<Collider>();
+        
     }
 
-    private void OnTriggerEnter(Collider other)
+    public override void Ability(float input)
+    {
+        if (cooldownActive) return;
+        if (currentOwner.isPlayer)
+        {
+            currentOwner.rb.AddForce(currentOwner.cam.forward * force, ForceMode.Impulse);
+        }
+        else
+        {
+            currentOwner.rb.AddForce((playerTransform.position - currentOwner.transform.position) * force, ForceMode.Impulse);
+        }
+
+        StartCoroutine(cooldownRoutine());
+    }
+    
+    private IEnumerator cooldownRoutine()
+    {
+        float original = playerTransform.gameObject.GetComponent<Rigidbody>().linearDamping;
+        playerTransform.gameObject.GetComponent<Rigidbody>().linearDamping = 25.0f;
+        cooldownActive = true;
+        shieldBashHitbox.enabled = true;
+        yield return new WaitForSeconds(cooldown);
+        shieldBashHitbox.enabled = false;
+        cooldownActive = false;
+        playerTransform.gameObject.GetComponent<Rigidbody>().linearDamping = original;
+    }
+    
+    
+    
+    /*private void OnTriggerEnter(Collider other)
     {
         print("enter trigger");
 
@@ -57,5 +89,5 @@ public class ShieldMask : Mask
         yield return new WaitForSeconds(1.5f);
         active = false;
         agent.isStopped = false;
-    }
+    }*/
 }
