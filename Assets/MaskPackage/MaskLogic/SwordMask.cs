@@ -4,9 +4,11 @@ public class SwordMask : Mask
 {
     [SerializeField] private GameObject swordPrefab;
     [SerializeField] private Transform armRig;
+    [SerializeField] private Transform swordPivot;
     [SerializeField] private Collider swordCollider;
     private DamageSourceCollision dmc;
     private float swordtimer = 0f;
+    private GameObject spawnObj;
     public override void Ability(float input)
     {
         swordCollider.enabled = true;
@@ -18,11 +20,11 @@ public class SwordMask : Mask
         dmc = swordCollider.GetComponent<DamageSourceCollision>();
         if (currentOwner.isPlayer)
         {
-            
+            spawnObj = Instantiate(swordPrefab, swordPivot);
         }
         else
         {
-            Instantiate(swordPrefab, armRig);
+            spawnObj = Instantiate(swordPrefab, armRig);
         }
         SelectColliderTeam();
     }
@@ -39,8 +41,13 @@ public class SwordMask : Mask
                 swordCollider.enabled = false;
             }
         }
-    }
 
+        if (!currentOwner.isPlayer)
+        {
+            
+        }
+    }
+    
     void SelectColliderTeam()
     {
         if (currentOwner.isPlayer)
@@ -51,6 +58,19 @@ public class SwordMask : Mask
         {
             dmc.damageTeam = LayerMask.NameToLayer("Enemy");
         }
-        
+    }
+
+    public override void Redirect()
+    {
+        Destroy(spawnObj);
+        /*if (currentOwner.isPlayer)
+        {
+            spawnObj = Instantiate(swordPrefab, swordPivot);
+        }
+        else
+        {
+            spawnObj = Instantiate(swordPrefab, armRig);
+        }*/
+        SelectColliderTeam();
     }
 }

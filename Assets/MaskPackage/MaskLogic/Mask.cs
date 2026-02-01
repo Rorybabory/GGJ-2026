@@ -15,7 +15,7 @@ public class Mask : MonoBehaviour
 
     public float range;
 
-    private Transform firePoint;
+    protected Transform firePoint;
     
     private void OnEnable()
     {
@@ -41,7 +41,7 @@ public class Mask : MonoBehaviour
             return;
         //if so, turn off interactability to begin flight process
         midTrade = true;
-        
+        this.Redirect();
         //fly to new owner (currentOwner value)
         StartCoroutine(FlyingCoroutine(newOwner));
     }
@@ -68,7 +68,6 @@ public class Mask : MonoBehaviour
             yield return null;
         }
         transform.position = newOwner.maskHolderSpot.position;
-        
         currentOwner = newOwner;
         transform.parent = newOwner.maskHolderSpot;
         transform.localPosition = Vector3.zero;
@@ -101,5 +100,10 @@ public class Mask : MonoBehaviour
     {
         return 1 - Mathf.Sqrt(1f - Mathf.Pow(t, 2));
         //return 1 - Math.sqrt(1 - Math.pow(x, 2));
+    }
+
+    public virtual void Redirect()
+    {
+        
     }
 }

@@ -4095,6 +4095,37 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8478899847681751732, guid: 2f6e9844426e2864c91a20bb197b289f, type: 3}
   m_PrefabInstance: {fileID: 629913750}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &320169781
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 320169782}
+  m_Layer: 7
+  m_Name: SwordPivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &320169782
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320169781}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.398, y: 0.878, z: 0.9680004}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1517197766}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &330585545 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 7198314160297287105, guid: bbbb0ec7415eac1488179e43b209e29a, type: 3}
@@ -4412,6 +4443,7 @@ MonoBehaviour:
   range: 4
   swordPrefab: {fileID: 2004715289959652907, guid: 60c9b55a57c351541910bb03a7b3486e, type: 3}
   armRig: {fileID: 1591052913}
+  swordPivot: {fileID: 320169782}
   swordCollider: {fileID: 1557106234}
 --- !u!1 &662443135
 GameObject:
@@ -5335,7 +5367,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7419535018002667748, guid: bbbb0ec7415eac1488179e43b209e29a, type: 3}
   m_PrefabInstance: {fileID: 3667570788795116315}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1517197765}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e233441d98e6cb48a94ce2242f25dbf, type: 3}
@@ -5346,7 +5378,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 855326634974299747, guid: bbbb0ec7415eac1488179e43b209e29a, type: 3}
   m_PrefabInstance: {fileID: 3667570788795116315}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1517197765}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 82ff46bfa1a0e6b4c86ec652d79df73d, type: 3}
@@ -5729,6 +5761,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1502547571}
   m_CullTransparentMesh: 1
+--- !u!1 &1517197765 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7481693183361560742, guid: bbbb0ec7415eac1488179e43b209e29a, type: 3}
+  m_PrefabInstance: {fileID: 3667570788795116315}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1517197766 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2045242048713096170, guid: bbbb0ec7415eac1488179e43b209e29a, type: 3}
+  m_PrefabInstance: {fileID: 3667570788795116315}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1517197773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517197765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c51ac13490f59754b840177c33d71f9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1557106232 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6205977892001779580, guid: 2f6e9844426e2864c91a20bb197b289f, type: 3}
@@ -6576,8 +6630,14 @@ PrefabInstance:
       objectReference: {fileID: 330585545}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2045242048713096170, guid: bbbb0ec7415eac1488179e43b209e29a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 320169782}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7481693183361560742, guid: bbbb0ec7415eac1488179e43b209e29a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1517197773}
   m_SourcePrefab: {fileID: 100100000, guid: bbbb0ec7415eac1488179e43b209e29a, type: 3}
 --- !u!222 &4281038247033389548
 CanvasRenderer:
