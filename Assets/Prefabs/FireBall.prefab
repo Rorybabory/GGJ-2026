@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 5963910661017330145}
-  spawnForce: {x: 0, y: 10, z: 30}
+  spawnForce: {x: 0, y: 0, z: 30}
   gravity: 1
   dmg: 1
 --- !u!1 &5963268407141122638
