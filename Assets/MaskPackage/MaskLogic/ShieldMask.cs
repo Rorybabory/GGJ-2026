@@ -11,7 +11,7 @@ public class ShieldMask : Mask
     public float force;
     public float cooldown = 1f;
     public Collider shieldBashHitbox;
-    public Transform playerTransform;
+    private Transform playerTransform;
     private bool cooldownActive = false;
     [SerializeField] private GameObject disintegrateMaskPrefab;
     [SerializeField] private Transform maskModelTransform;
@@ -19,7 +19,7 @@ public class ShieldMask : Mask
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     public override void Ability(float input)
