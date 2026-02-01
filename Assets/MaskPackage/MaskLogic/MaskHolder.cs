@@ -104,7 +104,7 @@ public class MaskHolder : MonoBehaviour
                     return;
                 }
             }
-            Debug.Log(hit.collider.gameObject.name);
+            //Debug.Log(hit.collider.gameObject.name);
             heldMask = hit.transform.GetComponent<Mask>();
             heldMask.currentOwner.GetComponent<MaskHolder>().heldMask = heldMask;
             heldMask.currentOwner.heldMask = null;
