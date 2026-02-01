@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -73,14 +74,14 @@ public class PlayerMovement : MonoBehaviour
         Vector3 velocity = rb.linearVelocity;
         Vector3 targetVelocity = new Vector3(moveDir.normalized.x, 0.0f, moveDir.normalized.z) * moveSpeed;
 
-        rb.linearVelocity += targetVelocity;
         //rb.linearVelocity = new Vector3(
         //    targetVelocity.x,
         //    velocity.y,
         //    targetVelocity.z
         //);
-        
-        rb.linearVelocity -= new Vector3(rb.linearVelocity.x * .2f, 0, rb.linearVelocity.z * .2f);
+        rb.linearVelocity += targetVelocity * Time.deltaTime;
+        rb.linearVelocity = Vector3.Lerp(rb.linearVelocity, new Vector3(0.0f, rb.linearVelocity.y, 0.0f), Time.deltaTime * 3.0f);
+
     }
 
     void Jump()
