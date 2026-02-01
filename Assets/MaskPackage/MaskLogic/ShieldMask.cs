@@ -13,6 +13,8 @@ public class ShieldMask : Mask
     public Collider shieldBashHitbox;
     public Transform playerTransform;
     private bool cooldownActive = false;
+    [SerializeField] private GameObject disintegrateMaskPrefab;
+    [SerializeField] private Transform maskModelTransform;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -51,6 +53,10 @@ public class ShieldMask : Mask
         //playerTransform.gameObject.GetComponent<Rigidbody>().linearDamping = original;
     }
     
+    private void OnDestroy()
+    {
+        Instantiate(disintegrateMaskPrefab, maskModelTransform.position, maskModelTransform.rotation);
+    }
     
     
     /*private void OnTriggerEnter(Collider other)

@@ -138,7 +138,7 @@ public class MaskHolder : MonoBehaviour
                 return;
             }
 
-            if (heldMask is FireballMask || heldMask is ShieldMask)
+            if (heldMask is FireballMask || heldMask is ShieldMask || heldMask is SwordMask)
             {
                 GameObject obj = heldMask.gameObject;
                 heldMask = null;

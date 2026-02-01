@@ -1,15 +1,21 @@
+using System;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class SwordMask : Mask
 {
     [SerializeField] private GameObject swordPrefab;
+    [SerializeField] private GameObject disintegrateMaskPrefab;
+    [SerializeField] private Transform maskModelTransform;
     [SerializeField] private Transform armRig;
     [SerializeField] private Collider swordCollider;
+    [SerializeField] private VisualEffect vfx;
     private DamageSourceCollision dmc;
     private float swordtimer = 0f;
     private GameObject spawnObj;
     public override void Ability(float input)
     {
+        vfx.Play();
         swordCollider.enabled = true;
         swordtimer = 0f;
     }
@@ -19,6 +25,7 @@ public class SwordMask : Mask
         dmc = swordCollider.GetComponent<DamageSourceCollision>();
         if (currentOwner.isPlayer)
         {
+            
         }
         else
         {
@@ -70,5 +77,10 @@ public class SwordMask : Mask
             spawnObj = Instantiate(swordPrefab, armRig);
         }*/
         SelectColliderTeam();
+    }
+
+    private void OnDestroy()
+    {
+        Instantiate(disintegrateMaskPrefab, maskModelTransform.position, maskModelTransform.rotation);
     }
 }
