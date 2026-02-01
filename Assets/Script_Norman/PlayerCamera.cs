@@ -29,7 +29,7 @@ public class PlayerCamera : MonoBehaviour
         Cursor.visible = false;
     }
 
-    void Update()
+    void LateUpdate()
     {
         Vector2 look = lookInput.action.ReadValue<Vector2>();
 
