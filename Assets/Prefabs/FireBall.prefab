@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 5281663932010850815}
   - component: {fileID: 5963910661017330145}
   - component: {fileID: 4671834766259836577}
+  - component: {fileID: 579285855627051280}
   m_Layer: 9
   m_Name: FireBall
   m_TagString: Untagged
@@ -189,9 +190,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 5963910661017330145}
-  spawnForce: {x: 0, y: 0, z: 30}
-  gravity: 1
-  dmg: 1
+  spawnForce: {x: 0, y: 0, z: 45}
+  gravity: 0.25
+  dmg: 3
+--- !u!135 &579285855627051280
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4928396299961788432}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5963268407141122638
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,7 +225,6 @@ GameObject:
   - component: {fileID: 6912897183756682215}
   - component: {fileID: 1353598664115463285}
   - component: {fileID: 1485480492533630828}
-  - component: {fileID: 7149021344077989142}
   m_Layer: 9
   m_Name: Sphere
   m_TagString: Untagged
@@ -279,24 +300,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &7149021344077989142
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5963268407141122638}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}

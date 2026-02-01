@@ -21,7 +21,7 @@ public class Fireball : MonoBehaviour
         rb.linearVelocity -= new Vector3(0, gravity * Time.deltaTime, 0);
     }
 
-    private void OnCollisionEnter(Collision other)
+    public void OnTriggerEnter(Collider other)
     {
         print("enter fireball collision");
         
