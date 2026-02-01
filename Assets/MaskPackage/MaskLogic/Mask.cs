@@ -15,7 +15,7 @@ public class Mask : MonoBehaviour
 
     public float range;
 
-    private Transform firePoint;
+    protected Transform firePoint;
     
     private void OnEnable()
     {
