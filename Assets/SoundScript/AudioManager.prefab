@@ -113,6 +113,6 @@ MonoBehaviour:
   audioMixer: {fileID: 24100000, guid: 5d52a72e513d37f4a96d4b5da7ebc0ca, type: 2}
   BGMAudioMixer: {fileID: -6362855074538967061, guid: 5d52a72e513d37f4a96d4b5da7ebc0ca, type: 2}
   SFXAudioMixer: {fileID: 3130476975228518520, guid: 5d52a72e513d37f4a96d4b5da7ebc0ca, type: 2}
-  bGMIndex: 01000000
+  bGMIndex: 010000000000000000000000
   BGMSounds: []
   SFXSounds: []
