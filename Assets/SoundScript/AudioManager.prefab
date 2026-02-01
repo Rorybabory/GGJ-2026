@@ -113,6 +113,55 @@ MonoBehaviour:
   audioMixer: {fileID: 24100000, guid: 5d52a72e513d37f4a96d4b5da7ebc0ca, type: 2}
   BGMAudioMixer: {fileID: -6362855074538967061, guid: 5d52a72e513d37f4a96d4b5da7ebc0ca, type: 2}
   SFXAudioMixer: {fileID: 3130476975228518520, guid: 5d52a72e513d37f4a96d4b5da7ebc0ca, type: 2}
-  bGMIndex: 010000000000000000000000
+  bGMIndex: 000000000000000000000000
   BGMSounds: []
-  SFXSounds: []
+  SFXSounds:
+  - name: mask_pull
+    audioClip: {fileID: 8300000, guid: b0986212a8794a742b34d504d1454ebe, type: 3}
+    volume: 0.5
+    pitch: 1
+    stereoPan: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: mask_equip_dink
+    audioClip: {fileID: 8300000, guid: 5ae20a550c1a7c44e8e459a8f840f5e9, type: 3}
+    volume: 0.5
+    pitch: 1
+    stereoPan: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: shoot_fireball
+    audioClip: {fileID: 8300000, guid: af0c0739bc4a5304bb35397fba626efc, type: 3}
+    volume: 0.5
+    pitch: 1
+    stereoPan: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: sword_hit
+    audioClip: {fileID: 8300000, guid: 0ac4d1f7d4a1ec143aa84d9910069193, type: 3}
+    volume: 0.5
+    pitch: 1
+    stereoPan: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: sword_miss
+    audioClip: {fileID: 8300000, guid: 536d347949b8053429b0134f23dbae6c, type: 3}
+    volume: 0.5
+    pitch: 1
+    stereoPan: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: watershield_create
+    audioClip: {fileID: 8300000, guid: 820e0ad6e71b0d946bc2082ef1fa9edb, type: 3}
+    volume: 0.5
+    pitch: 1
+    stereoPan: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: watershield_destroy
+    audioClip: {fileID: 8300000, guid: 451a7890444b70d43840742701b085d4, type: 3}
+    volume: 0.5
+    pitch: 1
+    stereoPan: 0
+    loop: 0
+    source: {fileID: 0}

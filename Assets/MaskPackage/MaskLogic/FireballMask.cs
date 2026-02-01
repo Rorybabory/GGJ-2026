@@ -28,6 +28,11 @@ public class FireballMask : Mask
     
     private void OnDestroy()
     {
+        if (!Application.isPlaying)
+            return;
+
+        if (!gameObject.scene.isLoaded)
+            return;
         Instantiate(disintegrateMaskPrefab, maskModelTransform.position, maskModelTransform.rotation);
     }
 }

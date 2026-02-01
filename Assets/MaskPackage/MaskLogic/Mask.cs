@@ -82,7 +82,21 @@ public class Mask : MonoBehaviour
         transform.localRotation = Quaternion.identity;
         timer = 0.0f;
         midTrade = false;
-        
+        if (AudioManager.instance != null)
+        {
+            switch (this)
+            {
+                case SwordMask:
+                    //AudioManager.instance.PlayAudio("");
+                    break;
+                case ShieldMask:
+                    AudioManager.instance.PlayAudio("watershield_create");
+                    break;
+                case FireballMask:
+                    AudioManager.instance.PlayAudio("shoot_fireball");
+                    break;
+            }
+        }
         print("exit transfer");
         yield return null;
     }

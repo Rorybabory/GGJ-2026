@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.LowLevelPhysics;
 using System.Collections;
+using AudioSystem;
 using UnityEngine.Events;
 
 public class MaskHolder : MonoBehaviour
@@ -42,8 +43,6 @@ public class MaskHolder : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //castLayerMask = LayerMask.NameToLayer("Mask");
-        
         if (transform.gameObject.CompareTag("Player"))
         {
             isPlayer = true;
@@ -75,6 +74,15 @@ public class MaskHolder : MonoBehaviour
         if (!heldMask)
             return;
         UseWeapon.Invoke();
+        switch (heldMask)
+        {
+            case FireballMask:
+                AudioManager.instance.PlayAudio("shoot_fireball");
+                break;
+            case SwordMask:
+                AudioManager.instance.PlayAudio("sword_miss");
+                break;
+        }
         heldMask.Ability(value.Get<float>());
     }
 
