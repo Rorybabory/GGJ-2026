@@ -67,7 +67,7 @@ Material:
     - _DstBlend: 10
     - _EdgeWidth: -5
     - _Metallic: 0
-    - _NoiseScale: 30
+    - _NoiseScale: 100
     - _NoiseStrength: 50
     - _QueueControl: 0
     - _QueueOffset: 0
