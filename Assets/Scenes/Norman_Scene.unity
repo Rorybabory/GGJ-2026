@@ -1487,63 +1487,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &320169781 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8135869934351496691, guid: bbbb0ec7415eac1488179e43b209e29a, type: 3}
-  m_PrefabInstance: {fileID: 3667570788795116315}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &320169783
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 320169781}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5fe21961ad0ba954b9f31ff74128f44b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!114 &320169784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 320169781}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e00652e38f45594ba0fe4a7e52fe122, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mouseDown:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 320169783}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: Play
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: PlayerAttackSword
-          m_BoolArgument: 0
-        m_CallState: 2
-  mouseUp:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!20 &330585545 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 7198314160297287105, guid: bbbb0ec7415eac1488179e43b209e29a, type: 3}
@@ -3284,56 +3227,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4064596210911643515, guid: bbbb0ec7415eac1488179e43b209e29a, type: 3}
-      propertyPath: mouseSensitivity
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5973538085905281459, guid: bbbb0ec7415eac1488179e43b209e29a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.59
-      objectReference: {fileID: 0}
-    - target: {fileID: 5973538085905281459, guid: bbbb0ec7415eac1488179e43b209e29a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.8447789
-      objectReference: {fileID: 0}
-    - target: {fileID: 5973538085905281459, guid: bbbb0ec7415eac1488179e43b209e29a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.5351156
-      objectReference: {fileID: 0}
-    - target: {fileID: 5973538085905281459, guid: bbbb0ec7415eac1488179e43b209e29a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 64.704
-      objectReference: {fileID: 0}
-    - target: {fileID: 7419535018002667748, guid: bbbb0ec7415eac1488179e43b209e29a, type: 3}
-      propertyPath: maxHealth
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 7481693183361560742, guid: bbbb0ec7415eac1488179e43b209e29a, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 7622493891147207360, guid: bbbb0ec7415eac1488179e43b209e29a, type: 3}
-      propertyPath: delay
-      value: 1.13
-      objectReference: {fileID: 0}
-    - target: {fileID: 8135869934351496691, guid: bbbb0ec7415eac1488179e43b209e29a, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8509060669019377776, guid: bbbb0ec7415eac1488179e43b209e29a, type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8135869934351496691, guid: bbbb0ec7415eac1488179e43b209e29a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 320169783}
-    - targetCorrespondingSourceObject: {fileID: 8135869934351496691, guid: bbbb0ec7415eac1488179e43b209e29a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 320169784}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbbb0ec7415eac1488179e43b209e29a, type: 3}
 --- !u!222 &4281038247033389548
 CanvasRenderer:
