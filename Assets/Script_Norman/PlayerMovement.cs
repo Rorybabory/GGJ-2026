@@ -18,12 +18,15 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float groundCheckRadius = 0.25f;
     [SerializeField] private LayerMask groundLayer;
 
+    private Camera cam;
+
     private Rigidbody rb;
     private Vector2 move;
     private bool isGrounded;
 
     void Awake()
     {
+        cam = GetComponentInChildren<Camera>();
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true; // critical for FPS
     }
@@ -64,11 +67,11 @@ public class PlayerMovement : MonoBehaviour
     void Move()
     {
         Vector3 moveDir =
-            transform.right * move.x +
-            transform.forward * move.y;
-
+            cam.transform.right * move.x +
+            cam.transform.forward * move.y;
+       
         Vector3 velocity = rb.linearVelocity;
-        Vector3 targetVelocity = moveDir * moveSpeed;
+        Vector3 targetVelocity = new Vector3(moveDir.normalized.x, 0.0f, moveDir.normalized.z) * moveSpeed;
 
         rb.linearVelocity += targetVelocity;
         //rb.linearVelocity = new Vector3(
