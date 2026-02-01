@@ -74,15 +74,19 @@ public class MaskHolder : MonoBehaviour
         if (!heldMask)
             return;
         UseWeapon.Invoke();
-        switch (heldMask)
+        if (AudioManager.instance != null)
         {
-            case FireballMask:
-                AudioManager.instance.PlayAudio("shoot_fireball");
-                break;
-            case SwordMask:
-                AudioManager.instance.PlayAudio("sword_miss");
-                break;
+            switch (heldMask)
+            {
+                case FireballMask:
+                    AudioManager.instance.PlayAudio("shoot_fireball");
+                    break;
+                case SwordMask:
+                    AudioManager.instance.PlayAudio("sword_miss");
+                    break;
+            }
         }
+
         heldMask.Ability(value.Get<float>());
     }
 
