@@ -6,13 +6,14 @@ public class WaveSpawner : MonoBehaviour
 {
     [SerializeField] GameObject[] prefabs;
     private Transform[] childTransforms;
+    public GameObject SpawnerHold;
     private GameObject waveText;
     private float waveTextTimer = 0.0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         waveText = transform.Find("WaveText").gameObject;
-        childTransforms = GetComponentsInChildren<Transform>();
+        childTransforms = SpawnerHold.transform.GetComponentsInChildren<Transform>();
         SpawnWave();
     }
 
