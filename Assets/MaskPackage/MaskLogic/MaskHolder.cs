@@ -137,6 +137,15 @@ public class MaskHolder : MonoBehaviour
             {
                 return;
             }
+
+            if (heldMask is FireballMask || heldMask is ShieldMask)
+            {
+                GameObject obj = heldMask.gameObject;
+                heldMask = null;
+                obj.transform.parent = null;
+                GameObject.Destroy(obj);
+            }
+            
             heldMask = hit.collider.GetComponent<Mask>();
             heldMask.currentOwner.GetComponent<MaskHolder>().heldMask = heldMask;
             heldMask.currentOwner.heldMask = null;
