@@ -113,8 +113,15 @@ MonoBehaviour:
   audioMixer: {fileID: 24100000, guid: 5d52a72e513d37f4a96d4b5da7ebc0ca, type: 2}
   BGMAudioMixer: {fileID: -6362855074538967061, guid: 5d52a72e513d37f4a96d4b5da7ebc0ca, type: 2}
   SFXAudioMixer: {fileID: 3130476975228518520, guid: 5d52a72e513d37f4a96d4b5da7ebc0ca, type: 2}
-  bGMIndex: 000000000000000000000000
-  BGMSounds: []
+  bGMIndex: 000000000100000000000000
+  BGMSounds:
+  - name: doom
+    audioClip: {fileID: 8300000, guid: 2298472d75fb5fd458b1338ff1b30fb7, type: 3}
+    volume: 0.25
+    pitch: 1
+    stereoPan: 0
+    loop: 1
+    source: {fileID: 0}
   SFXSounds:
   - name: mask_pull
     audioClip: {fileID: 8300000, guid: b0986212a8794a742b34d504d1454ebe, type: 3}
