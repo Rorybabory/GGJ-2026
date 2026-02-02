@@ -40,7 +40,7 @@ public class WaveSpawner : MonoBehaviour
                 waveText.SetActive(false);
             }
         }
-        if (GameObject.FindGameObjectsWithTag("Enemy").Length <= 0)
+        if (GameObject.FindGameObjectsWithTag("Enemy").Length <= 3)
         {
             SpawnWave();
         }
