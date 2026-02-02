@@ -7201,7 +7201,6 @@ MonoBehaviour:
   force: 100
   cooldown: 2
   shieldBashHitbox: {fileID: 7226001401303864872}
-  playerTransform: {fileID: 0}
   disintegrateMaskPrefab: {fileID: 8039494623713526444, guid: a302a5069a941584f926d1bc303bdcdd, type: 3}
   maskModelTransform: {fileID: 1306695132334575617}
 --- !u!135 &3507523514486904384
